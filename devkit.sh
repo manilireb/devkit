@@ -13,13 +13,19 @@ cat <<'EOF'
 
 EOF
 echo "Hi $(whoami) 🚀"
-echo 
-                                                             
+echo
+
 
 if [ -f "${DIRNAME}/.env" ]; then
   set -a
   source "${DIRNAME}/.env"
   set +a
+fi
+
+# Configure and activate mise
+export MISE_CONFIG_FILE="${DEVKIT_DIR}/mise/mise.toml"
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash 2>/dev/null || mise activate zsh 2>/dev/null)"
 fi
 
 source ${DEVKIT_DIR}/shell/alias/alias.sh

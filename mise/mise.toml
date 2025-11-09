@@ -1,0 +1,20 @@
+[tools]
+
+# Node.js & Package Managers
+node = "latest"
+pnpm = "latest"
+
+# Python & Package Management
+python = "latest"
+uv = "latest"
+
+# Kubernetes
+kubectl = "latest"
+kustomize = "latest"
+kind = "latest"
+
+# CLI Tools
+jq = "latest"
+yq = "latest"
+gh = "latest"
+usage = "latest"

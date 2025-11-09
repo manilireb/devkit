@@ -96,6 +96,19 @@ else
     echo "✅ mise already installed"
 fi
 
+# Set mise config file path
+export MISE_CONFIG_FILE="$SCRIPT_DIR/mise/mise.toml"
+echo "→ Using mise config: $MISE_CONFIG_FILE"
+
 # Ensure mise is activated for this session
 echo "→ Activating mise for current session..."
 eval "$(mise activate bash)"
+
+# Install tools from mise.toml
+if [ -f "$MISE_CONFIG_FILE" ]; then
+    echo "→ Installing tools from mise.toml..."
+    mise install
+    echo "✅ Tools installed successfully"
+else
+    echo "⚠️  Warning: mise.toml not found at $MISE_CONFIG_FILE"
+fi
