@@ -40,9 +40,6 @@ alias devkit-install="${DEVKIT_DIR}/install.sh"
 alias copypath="pwd | pbcopy"
 alias finder="open ."
 
-## 🔧 DevKit Functions
-alias devkit-update='devkit_update'
-
 ## ☸️  Kubernetes
 alias k="kubectl"
 

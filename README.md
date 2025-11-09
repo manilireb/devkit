@@ -14,16 +14,14 @@ DevKit is a comprehensive shell environment manager that provides:
 
 ## Prerequisites
 
-- macOS (Darwin-based)
+- macOS 
 - Zsh shell (default on modern macOS)
-- Internet connection for initial setup
 
 ## Installation
 
 ### 1. Clone the Repository
 
 ```bash
-cd ~/Workzone
 git clone <repository-url> devkit
 cd devkit
 ```
@@ -51,7 +49,7 @@ This script will install:
 Add the following lines to your `~/.zprofile`:
 
 ```bash
-export DEVKIT_DIR=~/Workzone/devkit
+export DEVKIT_DIR=<PATH_TO_DEVKIT>
 source ${DEVKIT_DIR}/devkit.sh
 ```
 
@@ -72,22 +70,6 @@ Run the following command to see all available DevKit aliases organized by categ
 ```bash
 devkit-aliases
 ```
-
-### Built-in Aliases
-
-DevKit provides several categories of aliases:
-
-#### General DevKit Aliases
-- `devkit` - Navigate to the DevKit directory
-- `devkit-install` - Run the installation script
-- `devkit-update` - Update DevKit configuration
-
-#### Shortcuts
-- `copypath` - Copy current directory path to clipboard
-- `finder` - Open current directory in Finder
-
-#### Kubernetes
-- `k` - Shortcut for `kubectl`
 
 ### Environment Variables
 
@@ -118,87 +100,6 @@ Edit `shell/alias/alias.sh` to add custom aliases:
 alias myalias="your command here"
 ```
 
-Use `##` with an emoji to create new categories. The `devkit-aliases` function will automatically parse and display them.
-
 ### Adding Shell Functions
 
 Add custom functions to `shell/functions/devkit-aliases.sh` or create new function files and source them in `devkit.sh`.
-
-## Project Structure
-
-```
-devkit/
-├── devkit.sh                      # Main entry point
-├── install.sh                     # Installation script
-├── mise/
-│   └── mise.toml                  # Tool version definitions
-├── shell/
-│   ├── alias/
-│   │   └── alias.sh              # Alias definitions
-│   └── functions/
-│       └── devkit-aliases.sh     # Shell functions
-├── apps/
-│   └── claude-code/
-│       └── claude-code.sh        # Claude Code integration
-└── .env                          # Environment variables (create as needed)
-```
-
-## Features in Detail
-
-### ASCII Art Banner
-
-Every time you start a new shell session, DevKit greets you with a stylish ASCII art banner and a personalized welcome message.
-
-### Automatic Environment Loading
-
-DevKit automatically:
-1. Loads environment variables from `.env`
-2. Configures and activates mise with the correct config file
-3. Sources all aliases and functions
-4. Provides visual feedback on successful loading
-
-### Tool Version Consistency
-
-Using mise ensures that all developers on your team use the same versions of critical development tools, preventing "works on my machine" issues.
-
-## Troubleshooting
-
-### DevKit not loading on shell startup
-
-Make sure the following lines are in `~/.zprofile` (not `~/.zshrc`):
-
-```bash
-export DEVKIT_DIR=~/Workzone/devkit
-source ${DEVKIT_DIR}/devkit.sh
-```
-
-### mise tools not available
-
-1. Check that mise is installed: `which mise`
-2. Verify mise config path: `echo $MISE_CONFIG_FILE`
-3. Manually run: `mise install`
-
-### Environment variables not loading
-
-1. Verify the `.env` file exists: `ls ${DEVKIT_DIR}/.env`
-2. Check file syntax (should be `export VAR=value` format)
-3. Reload shell: `source ~/.zprofile`
-
-## Contributing
-
-To add new features or aliases:
-
-1. Follow the existing code structure
-2. Add emoji-prefixed category headers in `alias.sh`
-3. Document any new environment variables or dependencies
-4. Test in a fresh shell session
-
-## License
-
-[Add your license here]
-
-## Acknowledgments
-
-- [mise](https://mise.jdx.dev/) - Unified tool version manager
-- [Homebrew](https://brew.sh/) - Package manager for macOS
-- [Claude Code](https://claude.ai/) - AI-powered development assistant
