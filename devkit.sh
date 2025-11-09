@@ -16,9 +16,9 @@ echo "Hi $(whoami) 🚀"
 echo
 
 
-if [ -f "${DIRNAME}/.env" ]; then
+if [ -f "${DEVKIT_DIR}/.env" ]; then
   set -a
-  source "${DIRNAME}/.env"
+  source "${DEVKIT_DIR}/.env"
   set +a
 fi
 
