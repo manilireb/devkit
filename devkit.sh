@@ -22,6 +22,9 @@ if [ -f "${DIRNAME}/.env" ]; then
   set +a
 fi
 
+source ${DEVKIT_DIR}/shell/alias/alias.sh
+source ${DEVKIT_DIR}/shell/functions/devkit-aliases.sh
+
 echo ""
 echo "Successfully loaded DevKit ✅"
 echo ""

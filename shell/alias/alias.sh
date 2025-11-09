@@ -32,6 +32,10 @@
 #
 # ============================================================================
 
+## 🛠️  General DevKit Aliases
+alias devkit="cd $DEVKIT_DIR"
+alias devkit-install="${DEVKIT_DIR}/install.sh"
+
 ## ⌨️  Shortcuts Commands
 alias copypath="pwd | pbcopy"
 alias finder="open ."
