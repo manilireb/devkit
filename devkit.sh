@@ -30,6 +30,7 @@ fi
 
 source ${DEVKIT_DIR}/shell/alias/alias.sh
 source ${DEVKIT_DIR}/shell/functions/devkit-aliases.sh
+eval $(thefuck --alias)
 
 echo ""
 echo "Successfully loaded DevKit ✅"
