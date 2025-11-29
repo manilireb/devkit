@@ -1,7 +1,7 @@
 [tools]
 
 # Node.js & Package Managers
-node = "latest"
+node = "24"
 pnpm = "latest"
 
 # Python & Package Management
@@ -18,3 +18,6 @@ jq = "latest"
 yq = "latest"
 gh = "latest"
 usage = "latest"
+
+[settings]
+python.uv_venv_auto = true

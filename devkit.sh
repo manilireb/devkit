@@ -31,7 +31,10 @@ fi
 source ${DEVKIT_DIR}/shell/alias/alias.sh
 source ${DEVKIT_DIR}/shell/functions/devkit-aliases.sh
 eval $(thefuck --alias)
+source ${DEVKIT_DIR}/shell/zsh/syntax-highlighting.sh
 
 echo ""
 echo "Successfully loaded DevKit ✅"
 echo ""
+
+# Load syntax highlighting LAST (required for it to work properly)

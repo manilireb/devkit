@@ -46,7 +46,7 @@ This script will install:
 
 ### 3. Configure Your Shell
 
-Add the following lines to your `~/.zprofile`:
+Add the following lines at the end of your `~/.zshrc`:
 
 ```bash
 export DEVKIT_DIR=<PATH_TO_DEVKIT>
@@ -56,7 +56,7 @@ source ${DEVKIT_DIR}/devkit.sh
 ### 4. Reload Your Shell
 
 ```bash
-source ~/.zprofile
+source ~/.zshrc
 ```
 
 You should see the DevKit banner and a success message!
